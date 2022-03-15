@@ -1,7 +1,5 @@
 # Test Cases
 
-##
-
 ### TestRail vs Zephyr/XRAY
 
 I did use Test Rail for creating TC. Probably it would be better to use Zephyr or XRAy in Jira to have everything in one place, where we could link items together, but I prefer Test Rail as it is easier you cant set up everything faster.
@@ -28,17 +26,17 @@ Possible configuration
 
 WebApp:
 
-Opera
+-Opera
 
-Firefox
+-Firefox
 
-Edge
+-Edge
 
-Internet Explore(if yes, that would be really bad)
+-Internet Explore(if yes, that would be really bad)
 
-Chrome
+-Chrome
 
-Safari
+-Safari
 
 NativeApp:
 

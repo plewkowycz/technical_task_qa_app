@@ -1,7 +1,5 @@
 # User stories and bugs
 
-##
-
 ### User stories
 
 I use Jira to set up simple project where we can better imagine entire process. I created US(User Stories) with specific task for each scenario, nevertheless it could be also good to create Epic with linked US for each scenario instead. I have some doubts regarding GIVEN, WHEN, THEN approach in US as some people use that template for US and other use that approach for BDD. I assume it is just template for US(normally I dont work based on assumption, but there is too many question regarding test).

@@ -1,16 +1,17 @@
 /// <reference types="cypress" />
 
-describe("As a user I want to log in to the app", () => {
+describe("As a user I want to land on login page", () => {
   beforeEach(() => {
     cy.visit("/");
   });
-  const USERNAME = "user1";
-  const PASSWORD = "pa55word";
-  const user_incorrect = "pa55word";
+  const username = Cypress.env("username");
+  const password = Cypress.env("password");
+
+  const user_incorrect = "cat";
   const password_incorrect_short = "cat";
   const password_incorrect_long = "catdogcat";
 
-  it("should open the web site for first time (when not logged in yet)", () => {
+  it("to view login page for the first time", () => {
     cy.get("[data-cy=box_sign_in]").should("have.text", "Sign in");
     cy.get("[data-cy=login_username_field]").should("have.value", "");
     cy.get("[data-cy=login_password_field]").should("have.value", "");
@@ -21,7 +22,7 @@ describe("As a user I want to log in to the app", () => {
     );
   });
 
-  it("User login failed", () => {
+  it("and fail login to application", () => {
     cy.get("[data-cy=sign_in_button").click();
     cy.get("#username-helper-text").should("have.text", "Username is required");
     cy.get("#password-helper-text").should("have.text", "Password is required");
@@ -39,22 +40,22 @@ describe("As a user I want to log in to the app", () => {
 
     cy.get("[data-cy=login_username_field]").clear();
     cy.get("[data-cy=login_password_field]").clear();
-    cy.get("[data-cy=login_username_field]").type(`${USERNAME}`);
+    cy.get("[data-cy=login_username_field]").type(`${username}`);
     cy.get("[data-cy=login_password_field]").type(`${password_incorrect_long}`);
     cy.get("[data-cy=sign_in_button").click();
     cy.get("#password-helper-text").should("have.text", "Password incorrect");
   });
 
-  it("User login succeed", () => {
-    cy.get("[data-cy=login_username_field]").type(`${USERNAME}`);
-    cy.get("[data-cy=login_password_field]").type(`${PASSWORD}`);
+  it("and succesfuly login to application", () => {
+    cy.get("[data-cy=login_username_field]").type(`${username}`);
+    cy.get("[data-cy=login_password_field]").type(`${password}`);
     cy.get("[data-cy=sign_in_button").click();
     cy.get("[data-cy=news_logo").should("have.text", "News");
   });
 
-  it("User opens web site next time (when previously logged in)  ", () => {
-    cy.get("[data-cy=login_username_field]").type(`${USERNAME}`);
-    cy.get("[data-cy=login_password_field]").type(`${PASSWORD}`);
+  it("and opens web again (when previously logged in)  ", () => {
+    cy.get("[data-cy=login_username_field]").type(`${username}`);
+    cy.get("[data-cy=login_password_field]").type(`${password}`);
     cy.get("[data-cy=sign_in_button").click();
     cy.get("[data-cy=news_logo").should("have.text", "News");
     cy.reload();
