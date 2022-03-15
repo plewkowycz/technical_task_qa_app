@@ -20,6 +20,8 @@ Password complexity to clarify, if 8 characters is enough without additional spe
 
 User name complexity. Does 4 characters is not too short?
 
+User name and password is validate dynamic, without clicking Login button. Something to disscus, if requirements allowa that.
+
 After landing to news page, there is not “Log out” button
 
 We can login without internet connect. I know we run locally app, but maybe it should be investigate
