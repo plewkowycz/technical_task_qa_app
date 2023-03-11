@@ -77,4 +77,4 @@ In folder mobile you can find APK file to mobile app. WIP.
 
 In folder test_cases we can find exported test cases created in Test Rail.
 
-In folder us_and bugs we can find exported bugs and US status from JIRA. Access to JIRA: laxoy19276@votooe.com/test1234
+In folder us_and bugs we can find exported bugs and US status from JIRA. 
