@@ -1,4 +1,4 @@
-name: Cypress Tests with installation job
+name: Cypress Tests 
 
 on: 
   push:
@@ -8,8 +8,11 @@ on:
 
 jobs:
   running_cypress:
+    name: Running cypress tests
     runs-on: ubuntu-latest
-    container: cypress/browsers:node12.18.3-chrome87-ff82
+    container:
+      image: cypress/browsers:node16.5.0-chrome94-ff93
+      options: --user 1001  
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
