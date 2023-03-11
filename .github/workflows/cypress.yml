@@ -3,7 +3,7 @@ name: Cypress Tests with installation job
 on: 
   push:
     branches: ['master']
-  pull_reques:
+  pull_request:
     branches: ['master']
 
 jobs:
