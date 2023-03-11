@@ -3,7 +3,7 @@
 ## Summary
 
 This repo shows example of task prepared for Quality Engineer to include solution for manual testing for web app and mobile app.
-In addition to that it should have automation tests, CI/CD pipeline and dokcer. 
+In addition to that it should have automation tests, CI/CD pipeline and dokcer. Copyright of application belong to `Sliide 2023`
 
 ## Feature Scenerioss
 
