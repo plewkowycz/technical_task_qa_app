@@ -20,7 +20,7 @@ jobs:
       - name: Install yarn dependecies
         run: yarn
       - name: Run application
-        run: yarn start
+        run: yarn start &
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
