@@ -1,12 +1,9 @@
-# Solution for Sliie QA technical test
+# Example solution for QA technical test
 
 ## Summary
 
-### In folder test_cases we can find exported test cases created in Test Rail.
-
-### In folder us_and bugs we can find exported bugs and US status from JIRA. Access to JIRA: laxoy19276@votooe.com/test1234
-
-### In folder mobile you can find APK file to mobile app.
+This repo shows example of task prepared for Quality Engineer to include solution for manual testing for web app and mobile app.
+In addition to that it should have automation tests, CI/CD pipeline and dokcer. 
 
 ## Feature Scenerioss
 
@@ -67,3 +64,17 @@ Given - the news cards are successfully loaded on the screen
 When - the user clicks on the view button of the card
 
 Then - user is navigated to the image of the card
+
+## WebApp
+
+Cypress tests were use for runnig web app. For exercise purpose some of them are failing
+
+## Mobile
+
+In folder mobile you can find APK file to mobile app. WIP.
+
+## Test cases, bugs reports and user stories 
+
+In folder test_cases we can find exported test cases created in Test Rail.
+
+In folder us_and bugs we can find exported bugs and US status from JIRA. Access to JIRA: laxoy19276@votooe.com/test1234
