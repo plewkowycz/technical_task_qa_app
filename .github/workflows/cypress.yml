@@ -7,7 +7,7 @@ on:
     branches: ['master']
 
 jobs:
-  install:
+  running_cypress:
     runs-on: ubuntu-latest
     container: cypress/browsers:node12.18.3-chrome87-ff82
     steps:
@@ -19,6 +19,8 @@ jobs:
           node-version: 16.14.0
       - name: Install yarn dependecies
         run: yarn
+      - name: Run application
+        run: yarn start
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
