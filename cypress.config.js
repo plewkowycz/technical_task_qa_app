@@ -19,13 +19,13 @@ module.exports = defineConfig({
   video: true,
   defaultCommandTimeout: 6000,
   pageLoadTimeout: 120000,
+  env: {
+    username: 'user1',
+    password: 'pa55word',
+    url: 'https://api.thecatapi.com',
+    endpoint: '/v1/images/search',
+  },
   e2e: {
-    env: {
-      username: 'user1',
-      password: 'pa55word',
-      url: 'https://api.thecatapi.com',
-      endpoint: '/v1/images/search',
+    baseUrl: 'http://localhost:3000/',
     },
-    baseUrl: 'http://localhost:3000/'
-    },
-})
+});
