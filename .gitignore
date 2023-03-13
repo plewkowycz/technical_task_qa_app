@@ -10,3 +10,4 @@ cypress/downloads
 cypress/report.json
 cypress/results
 mochawesome-report
+results

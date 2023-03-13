@@ -30,7 +30,7 @@ jobs:
           start: yarn start
           browser: chrome
           wait-on: 'http://localhost:3000/'
-          wait-on-timeout: 300
+          wait-on-timeout: 3000
       - name: Copy test execution videos and screenshots
         if: always ()
         run: |
