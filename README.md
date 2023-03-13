@@ -69,6 +69,10 @@ Then - user is navigated to the image of the card
 
 Cypress tests were use for runnig web app. For exercise purpose some of them are failing
 
+#### Reporting results 
+
+Run  `yarn add mochawesome mochawesome-generator mochawesome-report-generator`
+
 ## Mobile
 
 In folder mobile you can find APK file to mobile app. WIP.

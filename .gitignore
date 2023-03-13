@@ -7,3 +7,6 @@ yarn-error.log
 cypress/screenshots
 cypress/videos
 cypress/downloads
+cypress/report.json
+cypress/results
+mochawesome-report
