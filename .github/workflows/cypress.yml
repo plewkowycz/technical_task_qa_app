@@ -46,6 +46,7 @@ jobs:
       - name: Save results as test artifacts
         uses: action/upload-artifacts@v3
         if: failure()
+        with:
           name: cypress-results
           path: |
             cypress/screenshots
