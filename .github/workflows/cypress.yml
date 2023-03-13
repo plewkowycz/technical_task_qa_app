@@ -22,8 +22,8 @@ jobs:
           node-version: 16.14.0
       - name: Install yarn dependecies
         run: yarn
-      - name: Run application
-        run: yarn start &
+      # - name: Run application
+      #   run: yarn start &
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
