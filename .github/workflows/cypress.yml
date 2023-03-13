@@ -44,7 +44,7 @@ jobs:
         if: always ()
         run: yarn run report:generate
       - name: Save results as test artifacts
-        uses: action/upload-artifacts@v3
+        uses: actions/upload-artifact@v3
         if: failure()
         with:
           name: cypress-results
