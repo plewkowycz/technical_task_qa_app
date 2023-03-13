@@ -34,9 +34,9 @@ jobs:
       - name: Copy test execution videos and screenshots
         if: always ()
         run: |
-          mdkir results
-          cp - cypress/videos results/videos
-          cp - cypress/screenshots results/screenshots
+          mkdir results
+          cp -r cypress/videos results/videos
+          cp -r cypress/screenshots results/screenshots
       - name: Merge test results into one
         if: always ()
         run: yarn run report:merge
