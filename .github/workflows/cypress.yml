@@ -54,4 +54,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./results
-          destination_dir: ${{ GITHUB_REF_NAME }}/${{ GITHUB_RUN_NUMBER }}
+          destination_dir: ${{ github.ref.split('/')[2] }}/${{ github.run_number }}
