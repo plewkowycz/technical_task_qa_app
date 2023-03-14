@@ -22,8 +22,6 @@ jobs:
           node-version: 16.14.0
       - name: Install yarn dependecies
         run: yarn
-      # - name: Run application
-      #   run: yarn start &
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
@@ -49,9 +47,7 @@ jobs:
         with:
           name: cypress-results
           path: |
-            cypress/screenshots
-            cypress/videos
-            cypress/results
+            results
       - name: Deploy report page
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' || always() }}
