@@ -11,10 +11,6 @@ module.exports = defineConfig({
     html: true,
     json: true,
   },
-  retries: {
-    runMode: 3,
-    openMode: 0,
-  },
   chromeWebSecurity: false,
   video: true,
   defaultCommandTimeout: 6000,
