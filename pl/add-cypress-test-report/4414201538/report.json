@@ -1,0 +1,290 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 7,
+    "passes": 5,
+    "pending": 0,
+    "failures": 2,
+    "start": "2023-03-14T09:33:42.378Z",
+    "end": "2023-03-14T09:34:25.644Z",
+    "duration": 34557,
+    "testsRegistered": 7,
+    "passPercent": 71.42857142857143,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a43fc2ad-c4a1-4f88-9862-c369d6722089",
+      "title": "",
+      "fullFile": "cypress/e2e/Login/login_page.cy.js",
+      "file": "cypress/e2e/Login/login_page.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3f97ef44-82b6-4d3f-82db-b782ff3a9f5f",
+          "title": "As a user I want to land on login page",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "to view login page for the first time",
+              "fullTitle": "As a user I want to land on login page to view login page for the first time",
+              "timedOut": null,
+              "duration": 9368,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  \"../screenshots/login_page.cy.js/As a user I want to land on login page -- to view login page for the first time (failed).png\",\n  \"../videos/login_page.cy.js.mp4\"\n]",
+              "code": "cy.testid(\"box_sign_in\").should(\"have.text\", \"Sign in\");\ncy.testid(\"login_username_field\").should(\"have.value\", \"\");\ncy.testid(\"login_password_field\").should(\"have.value\", \"\");\ncy.testid(\"sign_in_button\").should(\"have.text\", \"Sign In\");\ncy.testid(\"copyright_section\").should(\"have.text\", \"Copyright © Sliide 2022.\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 6000ms: expected '<p.MuiTypography-root.MuiTypography-body2.MuiTypography-alignCenter.css-5k114j-MuiTypography-root>' to have text 'Copyright © Sliide 2022.', but the text was 'Copyright © Sliide 2023.'",
+                "estack": "AssertionError: Timed out retrying after 6000ms: expected '<p.MuiTypography-root.MuiTypography-body2.MuiTypography-alignCenter.css-5k114j-MuiTypography-root>' to have text 'Copyright © Sliide 2022.', but the text was 'Copyright © Sliide 2023.'\n    at Context.eval (webpack:///./cypress/e2e/Login/login_page.cy.js:19:35)",
+                "diff": "- 'Copyright © Sliide 2023.'\n+ 'Copyright © Sliide 2022.'\n"
+              },
+              "uuid": "57638a5e-6b48-490e-8671-42fc381d32fb",
+              "parentUUID": "3f97ef44-82b6-4d3f-82db-b782ff3a9f5f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "and fail login to application",
+              "fullTitle": "As a user I want to land on login page and fail login to application",
+              "timedOut": null,
+              "duration": 2864,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "\"../videos/login_page.cy.js.mp4\"",
+              "code": "cy.testid(\"sign_in_button\").click();\ncy.get(\"#username-helper-text\").should(\"have.text\", \"Username is required\");\ncy.get(\"#password-helper-text\").should(\"have.text\", \"Password is required\");\ncy.testid(\"login_username_field\").type(`${user_incorrect}`);\ncy.testid(\"login_password_field\").type(`${password_incorrect_short}`);\ncy.testid(\"sign_in_button\").click();\ncy.get(\"#username-helper-text\").should(\"have.text\", \"Wrong username\");\ncy.get(\"#password-helper-text\").should(\"have.text\", \"Minimum 8 characters length\");\ncy.testid(\"login_username_field\").clear();\ncy.testid(\"login_password_field\").clear();\ncy.testid(\"login_username_field\").type(`${username}`);\ncy.testid(\"login_password_field\").type(`${password_incorrect_long}`);\ncy.testid(\"sign_in_button\").click();\ncy.get(\"#password-helper-text\").should(\"have.text\", \"Password incorrect\");",
+              "err": {},
+              "uuid": "40d4ad94-fdd8-4d13-a0a0-d88fe74ae66c",
+              "parentUUID": "3f97ef44-82b6-4d3f-82db-b782ff3a9f5f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "and succesfuly login to application",
+              "fullTitle": "As a user I want to land on login page and succesfuly login to application",
+              "timedOut": null,
+              "duration": 1399,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "\"../videos/login_page.cy.js.mp4\"",
+              "code": "cy.login(username, password);\ncy.testid(\"news_logo\").should(\"have.text\", \"News\");",
+              "err": {},
+              "uuid": "05d69c80-d2d1-4022-8e75-e261728f47b6",
+              "parentUUID": "3f97ef44-82b6-4d3f-82db-b782ff3a9f5f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "and opens web again (when previously logged in)  ",
+              "fullTitle": "As a user I want to land on login page and opens web again (when previously logged in)  ",
+              "timedOut": null,
+              "duration": 7892,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  \"../screenshots/login_page.cy.js/As a user I want to land on login page -- and opens web again (when previously logged in)   (failed).png\",\n  \"../videos/login_page.cy.js.mp4\"\n]",
+              "code": "cy.login(username, password);\ncy.testid(\"news_logo\").should(\"have.text\", \"News\");\ncy.reload();\ncy.log(\"Test is failing on purpose\");\ncy.testid(\"news_logo\").should(\"have.text\", \"News\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 6000ms: Expected to find element: `[data-cy=news_logo]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 6000ms: Expected to find element: `[data-cy=news_logo]`, but never found it.\n    at Context.eval (webpack:///./cypress/e2e/Login/login_page.cy.js:57:27)",
+                "diff": null
+              },
+              "uuid": "d0b04538-9ac8-48e9-a5fb-b3740cd6348f",
+              "parentUUID": "3f97ef44-82b6-4d3f-82db-b782ff3a9f5f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "40d4ad94-fdd8-4d13-a0a0-d88fe74ae66c",
+            "05d69c80-d2d1-4022-8e75-e261728f47b6"
+          ],
+          "failures": [
+            "57638a5e-6b48-490e-8671-42fc381d32fb",
+            "d0b04538-9ac8-48e9-a5fb-b3740cd6348f"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 21523,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "19c1ad63-9975-4ac5-90ec-fee61d1ed578",
+      "title": "",
+      "fullFile": "cypress/e2e/News/news_page.cy.js",
+      "file": "cypress/e2e/News/news_page.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "998086ac-5aa4-4f8e-9ae6-d6e07cf5299e",
+          "title": "As a user I want to see my news",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "loaded in the cards",
+              "fullTitle": "As a user I want to see my news loaded in the cards",
+              "timedOut": null,
+              "duration": 5737,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "\"../videos/news_page.cy.js.mp4\"",
+              "code": "cy.login(username, password);\ncy.testid(\"top_news\").should(\"have.text\", \"Todays top news\");\ncy.testid(\"card_view_button\").its(\"length\").should(\"eq\", 24);\ncy.request({\n  method: \"GET\",\n  url: url + endpoint\n}).should(response => {\n  expect(response.status).to.eq(200);\n});",
+              "err": {},
+              "uuid": "778d7b7a-aef2-4807-9bce-e891134f40fa",
+              "parentUUID": "998086ac-5aa4-4f8e-9ae6-d6e07cf5299e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "are clickable and see 'VIEW' button",
+              "fullTitle": "As a user I want to see my news are clickable and see 'VIEW' button",
+              "timedOut": null,
+              "duration": 5731,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "\"../videos/news_page.cy.js.mp4\"",
+              "code": "cy.login(username, password);\ncy.testid(\"card_view_button\").should(\"have.attr\", \"href\").and(\"include\", \"thecatapi.com\");\ncy.testid(\"card_view_button\").eq(1).click();\ncy.url().should(\"contain\", \"/images\");",
+              "err": {},
+              "uuid": "8af86e56-a52e-4598-bad5-acc8b2f9d9b5",
+              "parentUUID": "998086ac-5aa4-4f8e-9ae6-d6e07cf5299e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "778d7b7a-aef2-4807-9bce-e891134f40fa",
+            "8af86e56-a52e-4598-bad5-acc8b2f9d9b5"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 11468,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "28f07591-6f3a-4102-8e81-4f052238d636",
+          "title": "As a user I want to see my news",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should failed to load",
+              "fullTitle": "As a user I want to see my news should failed to load",
+              "timedOut": null,
+              "duration": 1566,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "\"../videos/news_page.cy.js.mp4\"",
+              "code": "const url = Cypress.env(\"url\");\nconst endpoint = Cypress.env(\"endpoint\");\nconsole.log(url, endpoint);\ncy.intercept(\"GET\", url + endpoint + \"*\", {\n  forceNetworkError: true\n}).as(\"getNetworkFailure\");\ncy.visit(\"/\");\nconst username = Cypress.env(\"username\");\nconst password = Cypress.env(\"password\");\ncy.login(username, password);\ncy.testid(\"failed_load_news_message\").should(\"have.text\", \"Failed to load news\");",
+              "err": {},
+              "uuid": "ea770ba2-577c-4b66-94dc-f1036a8ff397",
+              "parentUUID": "28f07591-6f3a-4102-8e81-4f052238d636",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ea770ba2-577c-4b66-94dc-f1036a8ff397"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1566,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name].html",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "useInlineDiffs": true,
+        "embeddedScreenshots": true,
+        "reportDir": "cypress/results",
+        "reportFilename": "[name].html",
+        "overwrite": true,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
