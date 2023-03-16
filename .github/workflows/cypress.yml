@@ -20,7 +20,7 @@ jobs:
         uses: actions/setup-node@v3
         with: 
           node-version: 16.14.0
-      - name: Install yarn dependecies
+      - name: Install yarn dependencies
         run: yarn
       - name: Cypress run
         uses: cypress-io/github-action@v5
