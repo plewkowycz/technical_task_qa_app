@@ -55,7 +55,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./results
           destination_dir: ${{ github.head_ref }}/${{ github.run_id }}
-     - name: Create comment with link to cypress results
+      - name: Create comment with link to cypress results
         uses: peter-evans/create-or-update-comment@v2
         with:
           issue-number: 1
