@@ -59,7 +59,8 @@ jobs:
         uses: peter-evans/create-or-update-comment@v2
         if: always ()
         with:
-          issue-number: 1
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          issue-number: ${{ github.event.pull_request.number }}
           body: |
             Test results of cypress tests can be found here:
             https://plewkowycz.github.io/technical_task_qa_app/${{ github.head_ref }}/${{ github.run_id }}/report.html
