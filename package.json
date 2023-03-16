@@ -12,6 +12,9 @@
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "formik": "^2.2.9",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.2.2",
+    "mochawesome-report-generator": "^6.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.2.1",
@@ -24,7 +27,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "report:merge": "mochawesome-merge cypress/results/*.json -o cypress/report.json",
+    "report:generate": "marge cypress/report.json --reportDir results --assetsDir results/assets --reportPageTitle index.html --charts true"
   },
   "eslintConfig": {
     "extends": [

@@ -20,14 +20,48 @@ jobs:
         uses: actions/setup-node@v3
         with: 
           node-version: 16.14.0
-      - name: Install yarn dependecies
+      - name: Install yarn dependencies
         run: yarn
-      - name: Run application
-        run: yarn start &
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
           start: yarn start
           browser: chrome
           wait-on: 'http://localhost:3000/'
-          wait-on-timeout: 300
+          wait-on-timeout: 3000
+      - name: Copy test execution videos and screenshots
+        if: always ()
+        run: |
+          mkdir results
+          cp -r cypress/videos results/videos
+          cp -r cypress/screenshots results/screenshots
+      - name: Merge test results into one
+        if: always ()
+        run: yarn run report:merge
+      - name: Generate HTML report
+        if: always ()
+        run: yarn run report:generate
+      - name: Save results as test artifacts
+        uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: cypress-results
+          path: |
+            results
+      - name: Deploy report page
+        uses: peaceiris/actions-gh-pages@v3.9.2
+        if: ${{ github.ref == 'refs/heads/main' || always() }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./results
+          destination_dir: ${{ github.head_ref }}/${{ github.run_id }}
+      - name: Create comment with link to cypress results
+        uses: peter-evans/create-or-update-comment@v2
+        if: always ()
+        with:
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            Test results of cypress tests can be found here:
+            https://plewkowycz.github.io/technical_task_qa_app/${{ github.head_ref }}/${{ github.run_id }}/report.html
+          reactions: 'eyes'      

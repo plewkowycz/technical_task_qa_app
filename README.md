@@ -3,9 +3,9 @@
 ## Summary
 
 This repo shows example of task prepared for Quality Engineer to include solution for manual testing for web app and mobile app.
-In addition to that it should have automation tests, CI/CD pipeline and dokcer. Copyright of application belong to `Sliide 2023`
+In addition to that it should have automation tests, CI/CD pipeline and docker. Copyright of application belong to `Sliide 2023`
 
-## Feature Scenerioss
+## Feature Scenarios
 
 ### 1 - As a user I want to log in to the web site
 
@@ -67,7 +67,16 @@ Then - user is navigated to the image of the card
 
 ## WebApp
 
-Cypress tests were use for runnig web app. For exercise purpose some of them are failing
+Cypress tests were use for running web app. For exercise purpose some of them are failing
+
+#### Reporting results 
+
+Run  `yarn add mochawesome mochawesome-generator mochawesome-report-generator`
+
+#### Set up of CI/CD
+
+Using GHA and actions like:
+* [GitHub Pages Action](https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-deploy-to-subdirectory-destination_dir)  
 
 ## Mobile
 
