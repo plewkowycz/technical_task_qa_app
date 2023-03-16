@@ -57,6 +57,7 @@ jobs:
           destination_dir: ${{ github.head_ref }}/${{ github.run_id }}
       - name: Create comment with link to cypress results
         uses: peter-evans/create-or-update-comment@v2
+        if: always ()
         with:
           issue-number: 1
           body: |
